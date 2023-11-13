@@ -28,7 +28,9 @@ void FAnimNode_UBIKSolver::GatherDebugData(FNodeDebugData& DebugData)
 void FAnimNode_UBIKSolver::Initialize_AnyThread(const FAnimationInitializeContext& Context)
 {
     Super::Initialize_AnyThread(Context);
-
+#if PLATFORM_MAC
+    return;
+#endif
     Context.AnimInstanceProxy->GetSkelMeshComponent()->SetTickGroup(TG_DuringPhysics);
 }
 
@@ -36,7 +38,9 @@ void FAnimNode_UBIKSolver::EvaluateSkeletalControl_AnyThread(FComponentSpacePose
 {
     SCOPE_CYCLE_COUNTER(STAT_UBIK_EvaluateThread);
     Super::EvaluateSkeletalControl_AnyThread(Output, OutBoneTransforms);
-
+#if PLATFORM_MAC
+    return;
+#endif
     if (Output.AnimInstanceProxy->GetSkelMeshComponent() && Output.AnimInstanceProxy->GetSkelMeshComponent()->GetWorld())
     {
         World = Output.AnimInstanceProxy->GetSkelMeshComponent()->GetWorld();
