@@ -8,6 +8,10 @@
 #include "Interfaces/IPluginManager.h"
 #include "Misc/EngineVersionComparison.h"
 
+#if UE_VERSION_NEWER_THAN_OR_EQUAL(5, 3, 0)
+#include "Animation/AnimTrace.h"
+#endif
+
 /** STATS FOR USE WITH PROFILER **/
 DECLARE_CYCLE_STAT(TEXT("UBIK_EvaluateThread"), STAT_UBIK_EvaluateThread, STATGROUP_Character);
 

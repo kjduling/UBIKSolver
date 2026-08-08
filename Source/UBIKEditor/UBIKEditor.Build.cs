@@ -4,32 +4,32 @@ using UnrealBuildTool;
 
 public class UBIKEditor : ModuleRules
 {
-	public UBIKEditor(ReadOnlyTargetRules Target) : base(Target)
+	public UBIKEditor(ReadOnlyTargetRules target) : base(target)
 	{
 		PCHUsage = ModuleRules.PCHUsageMode.UseExplicitOrSharedPCHs;
 		
 		PublicIncludePaths.AddRange(
-			new string[] {
+			[
 				// ... add public include paths required here ...
-			}
-			);
+			]
+		);
 				
 		
 		PrivateIncludePaths.AddRange(
-			new string[] {
+			[
 				// ... add other private include paths required here ...
-			}
-			);
+			]
+		);
 
-        PublicDependencyModuleNames.AddRange(new string[] { "UBIKRuntime", "Core", "CoreUObject", "Engine", "InputCore"});
+        PublicDependencyModuleNames.AddRange(["UBIKRuntime", "Core", "CoreUObject", "Engine", "InputCore"]);
 
-        PrivateDependencyModuleNames.AddRange(new string[] { "UnrealEd", "EditorStyle", "AnimGraph", "AnimGraphRuntime", "BlueprintGraph", "PropertyEditor", "Slate", "SlateCore" });
+        PrivateDependencyModuleNames.AddRange(["UnrealEd", "EditorStyle", "AnimGraph", "AnimGraphRuntime", "BlueprintGraph", "PropertyEditor", "Slate", "SlateCore"
+        ]);
 		
 		DynamicallyLoadedModuleNames.AddRange(
-			new string[]
-			{
+			[
 				// ... add any modules that your module loads dynamically here ...
-			}
-			);
+			]
+		);
 	}
 }
